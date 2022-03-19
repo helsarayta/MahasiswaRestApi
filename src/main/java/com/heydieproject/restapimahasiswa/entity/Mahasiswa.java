@@ -38,11 +38,9 @@ public class Mahasiswa implements Serializable {
     private Set<MataKuliah> mataKuliahList;
 
     @ManyToOne
-    @JoinColumn(name = "id_jurusan")
     private Jurusan jurusan;
 
     @ManyToOne
-    @JoinColumn(name = "id_fakultas")
     private Fakultas fakultas;
 
     public Mahasiswa() {

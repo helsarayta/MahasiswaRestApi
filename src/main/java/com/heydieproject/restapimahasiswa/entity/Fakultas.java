@@ -3,7 +3,7 @@ package com.heydieproject.restapimahasiswa.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "tbl_fakultas")
@@ -14,8 +14,7 @@ public class Fakultas implements Serializable {
     @Column(name = "nama_fakultas", nullable = false, unique = true)
     @NotEmpty(message = "Nama fakultas harus diisi!!")
     private String namaFakultas;
-    @OneToMany
-    private Set<Mahasiswa> mahasiswaList;
+
 
     public Fakultas() {
     }
@@ -36,11 +35,4 @@ public class Fakultas implements Serializable {
         this.namaFakultas = namaFakultas;
     }
 
-    public Set<Mahasiswa> getMahasiswaList() {
-        return mahasiswaList;
-    }
-
-    public void setMahasiswaList(Set<Mahasiswa> mahasiswaList) {
-        this.mahasiswaList = mahasiswaList;
-    }
 }
